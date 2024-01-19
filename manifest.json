@@ -1,7 +1,7 @@
 {
   "name": "Currency Converter",
   "version": "1.0.0",
-  "description": "Get currency conversion",
+  "description": "Currency Converter: Simplifies conversion, detects user's currency, supports 148 currencies, multilingual, light/dark theme.",
   "manifest_version": 3,
   "author": "Adam Pawelczyk",
   "permissions": ["scripting", "activeTab", "storage", "tabs"],
