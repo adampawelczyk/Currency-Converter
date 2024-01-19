@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <script src="popup.js"></script>
+    <script type="text/javascript" src="globals/currencyCodeToCountryName.js"></script>
+    <script type="text/javascript" src="globals/countryNameToCurrencyCode.js"></script>
+    <script type="text/javascript" src="globals/currencyCodeToSymbol.js"></script>
+    <script type="text/javascript" src="globals/currencySymbolToCurrencyCode.js"></script>
+    <script type="text/javascript" src="globals/currencyCodeToCountryCode.js"></script>
+    <script type="text/javascript" src="globals/countryCodeToCurrencyCode.js"></script>
+    <script type="text/javascript" src="globals/timezones.js"></script>
+    <script type="text/javascript" src="globals/languages.js"></script>
+    <script type="text/javascript" src="shared.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div id="top-bar">
+        <span class="material-symbols-outlined">
+            currency_exchange
+        </span>
+        <div id="app-name">
+           Currency Converter 
+        </div>
+    </div>
+    <div class="list">
+        <label id="currency-list-text" for="currency-list">Convert to:</label>
+        <select id="currency-list">
+            <option value="detect-currency">Detect your currency</option>
+        </select>
+    </div>
+    <div class="list">
+        <label id="language-list-text" for="language-list">Language:</label>
+        <select id="language-list">
+            <option value="browser-language">Use Browser Language</option>
+        </select>
+    </div>
+    <div class="list">
+        <label id="theme-list-text" for="theme-list">Theme:</label>
+        <select id="theme-list">
+            <option value="browser-theme">Use Browser Theme</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+    </div>
+</body>
+</html>

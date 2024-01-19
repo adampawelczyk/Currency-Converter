@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="shared.test.js"></script>
+    <script src="../shared.js"></script>
+    <script src="popup.test.js"></script>
+    <script src="../popup.js"></script>
+    <script src="../content_script.js"></script>
+    <script src="content_script.test.js"></script>
+    <script src="sharedTestingUtilities.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Testing page</h1>
+    <div id="app-name">
+        Currency Converter 
+     </div>
+    <button id="run-shared-tests">Test shared.js</button>
+    <button id="run-popup-tests">Test popup.js</button>
+    <button id="run-content_script-tests">Test content_script.js</button>
+    <div id="top-bar"></div>
+    <span id="currency-list-text">Convert to:</span>
+    <select id="currency-list">
+        <option value="detect-currency">Detect your currency</option>
+    </select>
+    <span id="language-list-text">Language:</span>
+    <select id="language-list">
+        <option value="browser-language">Use Browser Language</option>
+    </select>
+    <span id="theme-list-text">Theme:</span>
+    <select id="theme-list">
+        <option value="browser-theme">Use Browser Theme</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+    <p id="text-to-select">20.0$</p>
+</body>
+</html>

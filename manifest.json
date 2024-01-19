@@ -1,0 +1,47 @@
+{
+  "name": "Currency Converter",
+  "version": "1.0.0",
+  "description": "Get currency conversion",
+  "manifest_version": 3,
+  "author": "Adam Pawelczyk",
+  "permissions": ["scripting", "activeTab", "storage", "tabs"],
+  "host_permissions": ["http://*/*","https://*/*"],
+  "web_accessible_resources": [{ 
+    "resources": ["test/test.html", "languages/en.json", "languages/de.json", "languages/pl.json"],
+    "matches": ["<all_urls>"]
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "icons":{
+    "128": "utilities/icon.png"
+  },
+  "action":{
+    "default_icon": "utilities/icon.png",
+    "default_popup": "index.html",
+    "default_title": "Currency Converter"
+  },
+  "background": {
+    "service_worker": "worker_wrapper.js"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_script.js",
+        "globals/currencyCodeToCountryName.js",
+        "globals/countryNameToCurrencyCode.js",
+        "globals/currencyCodeToSymbol.js",
+        "globals/currencySymbolToCurrencyCode.js",
+        "globals/currencyCodeToCountryCode.js",
+        "globals/countryCodeToCurrencyCode.js",
+        "globals/timezones.js",
+        "globals/languages.js",
+        "shared.js"
+      ]
+    }
+  ]
+}
