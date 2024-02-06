@@ -4,7 +4,7 @@
   "description": "Currency Converter: Simplifies conversion, detects user's currency, supports 148 currencies, multilingual, light/dark theme.",
   "manifest_version": 3,
   "author": "Adam Pawelczyk",
-  "permissions": ["scripting", "activeTab", "storage", "tabs"],
+  "permissions": ["scripting", "storage"],
   "host_permissions": ["http://*/*","https://*/*"],
   "web_accessible_resources": [{ 
     "resources": ["test/test.html", "languages/en.json", "languages/de.json", "languages/pl.json"],
