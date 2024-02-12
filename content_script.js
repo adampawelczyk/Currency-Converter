@@ -163,10 +163,14 @@ function guessCountryByCurrencyCode(currencyCodes) {
         return currencyCode;
     }
 
+    if (currencyCodes.includes('USD') && getPageLanguageCode() === 'EN') {
+        return 'USD';
+    }
+
     const pageTopLayerDomain = getPageTopLayerDomain();
     currencyCode = countryCodeToCurrencyCode[pageTopLayerDomain];
 
-    if (currencyCodes.includes(currencyCode)) return pageTopLayerDomain;
+    if (currencyCodes.includes(currencyCode)) return currencyCode;
 
     return currencyCodes[0];
 }
@@ -179,6 +183,17 @@ function getPageCountryCode() {
       return countryCode;
     } else {
       return "No country code";
+    }
+}
+
+function getPageLanguageCode() {
+    const lang = document.documentElement.lang;
+
+    if (lang.includes('-')) {
+        const languageCode = lang.split('-')[0].toUpperCase();
+        return languageCode;
+    } else {
+        return lang.toUpperCase();
     }
 }
 
