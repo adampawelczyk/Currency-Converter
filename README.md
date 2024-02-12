@@ -23,6 +23,8 @@ Follow these steps to install the extension:
 4. Enable "Developer mode" in the top right corner.
 5. Click on "Load unpacked" and select the folder where you downloaded the extension files.
 
+Alternatively, you can install the extension directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/currency-converter/alhjppeeeklkfjecgipijppbgnmgipnh?hl=en-US&utm_source=ext_sidebar).
+
 ## Usage
 
 1. Browse any webpage containing currency values.
