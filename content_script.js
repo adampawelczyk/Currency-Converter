@@ -203,7 +203,7 @@ function getPageTopLayerDomain() {
 
 async function getCurrencyRate(from, to) {
     // Using data from the Currency API by Fawaz Ahmed (https://github.com/fawazahmed0/exchange-api)
-    const url = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currenciess/' + from + '.json';
+    const url = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/' + from + '.json';
     const fallbackUrl = 'https://currency-api.pages.dev/v1/currencies/' + from + '.json';
 
     try {
