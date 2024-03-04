@@ -14,6 +14,8 @@
     "Cannot extract number from selected text": "Nummer kann nicht aus ausgewähltem Text extrahiert werden",
     "Cannot get the currency symbol": "Das Währungssymbol wird nicht angezeigt",
     "Cannot get the currency rate": "Kann den Währungskurs nicht ermitteln",
+    "Network response was not ok": "Netzwerkantwort war nicht in Ordnung",
+    "Error while translating error message": "Fehler beim Übersetzen der Fehlermeldung",
     "AED": "VAE-Dirham",
     "AFN": "Afghanischer Afghani",
     "ALL": "Albanischer Lek",

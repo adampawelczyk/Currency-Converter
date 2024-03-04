@@ -50,11 +50,10 @@ async function showCurrencyRate() {
         if (currencyRateDiv) {
             const translatedMessage = await getTranslation(error.message);
             if (!translatedMessage) {
-                currencyRateDiv.innerHTML = 'Error while translating message';
+                currencyRateDiv.innerHTML = await getTranslation('Error while translating error message') + ':</br>' + error.message;
             } else {
                 currencyRateDiv.innerHTML = translatedMessage;
             }
-            
         }
     }
 }
