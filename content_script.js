@@ -202,18 +202,24 @@ function getPageTopLayerDomain() {
 }
 
 async function getCurrencyRate(from, to) {
-    // Using data from the Currency API by Fawaz Ahmed (https://github.com/fawazahmed0/currency-api)
-    const url = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + from + '/' + to + '.json';
+    // Using data from the Currency API by Fawaz Ahmed (https://github.com/fawazahmed0/exchange-api)
+    const url = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/' + from + '.json';
+    const fallbackUrl = 'https://currency-api.pages.dev/v1/currencies/' + from + '.json';
 
     try {
-        const response = await fetch(url);
+        let response = await fetch(url);
+        console.log(response);
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            response = await fetch(fallbackUrl);
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
         }
 
         const data = await response.json();
-        return data[Object.keys(data)[1]];
+        return data[from][to];
     } catch (error) {
         throw error;
     }
