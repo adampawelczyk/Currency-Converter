@@ -14,6 +14,8 @@
     "Cannot extract number from selected text": "Nie można wyodrębnić numeru z zaznaczonego tekstu",
     "Cannot get the currency symbol": "Nie można uzyskać symbolu waluty",
     "Cannot get the currency rate": "Nie można uzyskać kursu waluty",
+    "Network response was not ok": "Odpowiedź sieci nie była prawidłowa",
+    "Error while translating error message": "Błąd podczas tłumaczenia komunikatu błędu",
     "AED": "Dirham Zjednoczonych Emiratów Arabskich",
     "AFN": "Afgani",
     "ALL": "Lek Albański",
