@@ -192,7 +192,7 @@ async function testShowCurrencyRates() {
         async (from, to) => { return 1; },
         (str) => { return undefined; },
         (str) => { return undefined; },
-        'Error while translating message',
+        'Cannot extract number from selected text',
         'Test if currency rate div contains the correct text if the getTranslation function returns undefined'
     );
 }

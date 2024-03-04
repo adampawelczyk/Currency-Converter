@@ -48,9 +48,16 @@ async function showCurrencyRate() {
         currencyRateDiv.innerHTML = `${formattedResult} ${currencyCode}`;
     } catch(error) {
         if (currencyRateDiv) {
-            const translatedMessage = await getTranslation(error.message);
+            let translatedMessage = await getTranslation(error.message);
             if (!translatedMessage) {
-                currencyRateDiv.innerHTML = await getTranslation('Error while translating error message') + ':</br>' + error.message;
+                translatedMessage = await getTranslation('Error while translating error message');
+
+                if (!translatedMessage) {
+                    currencyRateDiv.innerHTML = error.message;
+                } else {
+                    currencyRateDiv.innerHTML = translatedMessage + ':</br>' + error.message;
+                }
+                
             } else {
                 currencyRateDiv.innerHTML = translatedMessage;
             }
