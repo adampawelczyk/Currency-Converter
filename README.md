@@ -83,5 +83,5 @@ This project is licensed under the [MIT License](https://github.com/adampawelczy
 
 ### Currency API
 - **Provider:** Fawaz Ahmed
-- **API Documentation:** [Currency API Documentation](https://github.com/fawazahmed0/currency-api)
+- **API Documentation:** [Currency API Documentation](https://github.com/fawazahmed0/exchange-api)
 
