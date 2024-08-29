@@ -115,20 +115,20 @@ async function testUpdateTranslation() {
     const originalFetch = globalThis.fetch;
     globalThis.fetch = async () => ({
         json: async () => ({
-            "app-name": "Currency Converter",
-            "currency-list-text": "Convert to:",
-            "detect-currency": "Detect your currency",
-            "language-list-text": "Language:",
-            "browser-language": "Use Browser Language",
-            "en.json": "English",
-            "pl.json": "Polish - Polski",
-            "de.json": "German - Deutsch",
-            "theme-list-text": "Theme:",
-            "browser-theme": "Use Browser Theme",
-            "light": "Light",
-            "dark": "Dark",
-            "USD": "United States Dollar",
-            "GBP": "British Pound Sterling",
+            'app-name': 'Currency Converter',
+            'currency-list-text': 'Convert to:',
+            'detect-currency': 'Detect your currency',
+            'language-list-text': 'Language:',
+            'browser-language': 'Use Browser Language',
+            'en.json': 'English',
+            'pl.json': 'Polish - Polski',
+            'de.json': 'German - Deutsch',
+            'theme-list-text': 'Theme:',
+            'browser-theme': 'Use Browser Theme',
+            'light': 'Light',
+            'dark': 'Dark',
+            'USD': 'United States Dollar',
+            'GBP': 'British Pound Sterling',
         })
     });
 

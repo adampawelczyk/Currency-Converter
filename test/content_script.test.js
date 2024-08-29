@@ -274,35 +274,35 @@ function testGuessCountryByCurrencyCode() {
 function testExtractNumber() {
     // Test case 1:
     assertEqual(
-        extractNumber("The price is $1,234"),
+        extractNumber('The price is $1,234'),
         1234,
         'Test case 1: Test if extractNumber function returns correct number from text'
     );
 
     // Test case 2:
     assertEqual(
-        extractNumber("The price is $1 234"),
+        extractNumber('The price is $1 234'),
         1234,
         'Test case 2: Test if extractNumber function returns correct number from text'
     );
 
     // Test case 3:
     assertEqual(
-        extractNumber("The price is $1,234.99"),
+        extractNumber('The price is $1,234.99'),
         1234.99,
         'Test case 3: Test if extractNumber function returns correct number from text'
     );
 
     // Test case 4:
     assertEqual(
-        extractNumber("The price is $1,23"),
+        extractNumber('The price is $1,23'),
         1.23,
         'Test case 4: Test if extractNumber function returns correct number from text'
     );
 
     // Test case 5:
     assertEqual(
-        extractNumber("The price is $1.23"),
+        extractNumber('The price is $1.23'),
         1.23,
         'Test case 5: Test if extractNumber function returns correct number from text'
     );

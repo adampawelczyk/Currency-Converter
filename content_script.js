@@ -76,26 +76,27 @@ async function drawCurrencyRateDiv() {
             currencyRateDiv = null;
         }
 
-        currencyRateDiv = document.createElement("div");
+        currencyRateDiv = document.createElement('div');
         currencyRateDiv.setAttribute('id', 'currency-rate-div');
         currencyRateDiv.textContent = '';
-        currencyRateDiv.style.position = "absolute";
-        currencyRateDiv.style.top = boundingRect.bottom + scrollTop + "px"; // Position the div just below the selection
-        currencyRateDiv.style.left = boundingRect.left + "px"; // Position the div at the leftmost point of the selection
+        currencyRateDiv.style.position = 'absolute';
+        currencyRateDiv.style.top = boundingRect.bottom + scrollTop + 'px'; // Position the div just below the selection
+        currencyRateDiv.style.left = boundingRect.left + 'px'; // Position the div at the leftmost point of the selection
+        currencyRateDiv.style.fontFamily = 'system-ui';
 
         if (await isDarkTheme()) {
             currencyRateDiv.style.backgroundColor = '#121212';
-            currencyRateDiv.style.color = "white";
+            currencyRateDiv.style.color = 'white';
         } else {
             currencyRateDiv.style.backgroundColor = '#f4f4f4';
-            currencyRateDiv.style.color = "black";
+            currencyRateDiv.style.color = 'black';
         }
 
-        currencyRateDiv.style.boxShadow = "3px 3px 10px -4px rgba(0, 0, 0, 1)";
+        currencyRateDiv.style.boxShadow = '3px 3px 10px -4px rgba(0, 0, 0, 1)';
 
-        currencyRateDiv.style.padding = "10px";
+        currencyRateDiv.style.padding = '10px';
         currencyRateDiv.style.marginTop = '5px';
-        currencyRateDiv.style.borderRadius = "10px";
+        currencyRateDiv.style.borderRadius = '10px';
 
         document.body.insertAdjacentElement('beforeend', currencyRateDiv);
     } catch (error) {
@@ -177,7 +178,7 @@ function guessCountryByCurrencyCode(currencyCodes) {
     const pageCountryCode = getPageCountryCode();
     let currencyCode = countryCodeToCurrencyCode[pageCountryCode];
 
-    if (pageCountryCode !== "No country code" && currencyCodes.includes(currencyCode)) {
+    if (pageCountryCode !== 'No country code' && currencyCodes.includes(currencyCode)) {
         return currencyCode;
     }
 
@@ -200,7 +201,7 @@ function getPageCountryCode() {
       const countryCode = lang.split('-')[1].toUpperCase();
       return countryCode;
     } else {
-      return "No country code";
+      return 'No country code';
     }
 }
 

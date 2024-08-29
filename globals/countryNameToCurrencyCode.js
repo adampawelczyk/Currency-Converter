@@ -134,7 +134,7 @@ const countryNameToCurrencyCode = {
     'Tajikistani Somoni': 'TJS',
     'Tanzanian Shilling': 'TZS',
     'Thai Baht': 'THB',
-    "Tongan Pa'anga": 'TOP',
+    'Tongan Pa\'anga': 'TOP',
     'Trinidad and Tobago Dollar': 'TTD',
     'Tunisian Dinar': 'TND',
     'Turkish Lira': 'TRY',

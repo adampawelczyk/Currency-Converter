@@ -62,7 +62,7 @@ function getUserCurrencyCode() {
 function getUserCountryCode() {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-	if (timezone === "" || !timezone) {
+	if (timezone === '' || !timezone) {
 		return undefined;
 	}
 
