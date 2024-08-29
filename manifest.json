@@ -7,7 +7,14 @@
   "permissions": ["scripting", "storage"],
   "host_permissions": ["http://*/*","https://*/*"],
   "web_accessible_resources": [{ 
-    "resources": ["test/test.html", "languages/en.json", "languages/de.json", "languages/pl.json"],
+    "resources": [
+      "test/test.html",
+      "languages/en.json",
+      "languages/de.json",
+      "languages/pl.json",
+      "languages/es.json",
+      "languages/it.json"
+    ],
     "matches": ["<all_urls>"]
   }],
   "content_security_policy": {
