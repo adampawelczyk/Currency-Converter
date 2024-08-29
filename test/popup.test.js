@@ -123,6 +123,8 @@ async function testUpdateTranslation() {
             'en.json': 'English',
             'pl.json': 'Polish - Polski',
             'de.json': 'German - Deutsch',
+            'es.json': 'Spanish - Español',
+            'it.json': 'Italian - Italiano',
             'theme-list-text': 'Theme:',
             'browser-theme': 'Use Browser Theme',
             'light': 'Light',
