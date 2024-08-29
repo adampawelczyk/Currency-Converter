@@ -44,8 +44,8 @@ async function showCurrencyRate() {
         }
 
         const result = stringWithoutCurrency * response;
-        const formattedResult = result.toFixed(2);
-        currencyRateDiv.innerHTML = `${formattedResult} ${currencyCode}`;
+        const formattedResult = formatCurrency(result, convertTo);
+        currencyRateDiv.innerHTML = formattedResult;
     } catch(error) {
         if (currencyRateDiv) {
             let translatedMessage = await getTranslation(error.message);
@@ -149,6 +149,18 @@ function extractNumber(str) {
     let result = parseFloat(cleanedString);
 
     return isNaN(result) ? null : result;
+}
+
+function formatCurrency(amount, currencyCode, userLocale = navigator.language) {
+    const formattedAmount = new Intl.NumberFormat(userLocale, {
+        style: 'decimal',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(amount);
+
+    const currencySymbol = getCurrencySymbol(currencyCode);
+
+    return `${formattedAmount} ${currencySymbol}`;
 }
 
 function detectCurrency(currencySymbol) {
