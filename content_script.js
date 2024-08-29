@@ -82,6 +82,7 @@ async function drawCurrencyRateDiv() {
         currencyRateDiv.style.position = "absolute";
         currencyRateDiv.style.top = boundingRect.bottom + scrollTop + "px"; // Position the div just below the selection
         currencyRateDiv.style.left = boundingRect.left + "px"; // Position the div at the leftmost point of the selection
+        currencyRateDiv.style.fontFamily = "system-ui";
 
         if (await isDarkTheme()) {
             currencyRateDiv.style.backgroundColor = '#121212';
