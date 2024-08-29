@@ -1,5 +1,5 @@
 const languages = {
-  "English": "en.json",
-  "German": "de.json",
-  "Polish": "pl.json",
+  'English': 'en.json',
+  'German': 'de.json',
+  'Polish': 'pl.json',
 };
