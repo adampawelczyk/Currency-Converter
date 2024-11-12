@@ -43,6 +43,7 @@ const currencySymbolToCurrencyCode = {
     'CHF': 'CHF',
     'CLP$': 'CLP',
     '¥': [ 'JPY', 'CNY' ],
+    '円': 'JPY',
     'CN¥': 'CNY',
     'Col$': 'COP',
     '₡': 'CRC',
