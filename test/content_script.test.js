@@ -401,14 +401,6 @@ async function observeCurrencyRateDiv(resolve, reject) {
     // Start observing the body for changes
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // await new Promise((resolve) => {
-        // setTimeout(() => {
-        //     if (!isResolved) {
-        //     observer.disconnect();
-        //     reject('Currency rate div not found within the timeout');
-        //     }
-        // }, 1000);
-    // });
     await new Promise((timeoutResolve, timeoutReject) => {
         setTimeout(() => {
           if (!isResolved) {
