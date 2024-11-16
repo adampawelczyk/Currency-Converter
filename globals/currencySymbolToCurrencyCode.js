@@ -40,6 +40,7 @@ const currencySymbolToCurrencyCode = {
     'Can$': 'CAD',
     'C$': [ 'CAD', 'NIO' ],
     'FC': [ 'CDF', 'KMF' ],
+    '₣': 'CHF',
     'CHF': 'CHF',
     'CLP$': 'CLP',
     '¥': [ 'JPY', 'CNY' ],
