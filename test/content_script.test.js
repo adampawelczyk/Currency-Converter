@@ -302,9 +302,23 @@ function testExtractNumber() {
 
     // Test case 5:
     assertEqual(
-        extractNumber('The price is $1.23'),
-        1.23,
+        extractNumber('The price is ₹1,23,456.78'),
+        123456.78,
         'Test case 5: Test if extractNumber function returns correct number from text'
+    );
+
+    // Test case 6:
+    assertEqual(
+        extractNumber('The price is ₣1\'234.56'),
+        1234.56,
+        'Test case 6: Test if extractNumber function returns correct number from text'
+    );
+
+    // Test case 7:
+    assertEqual(
+        extractNumber('The price is €1.234,56'),
+        1234.56,
+        'Test case 7: Test if extractNumber function returns correct number from text'
     );
 }
 
