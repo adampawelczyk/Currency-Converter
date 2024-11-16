@@ -5,7 +5,7 @@ let currencyRateDiv = null;
 
 async function showCurrencyRate() {
     const selectedText = window.getSelection().toString();
-    const detectedCurrency = detectCurrency(selectedText.replace(/[0-9\s,.]+/g, ''));
+    const detectedCurrency = detectCurrency(extractCurrencySymbol(selectedText));
 
     if (detectedCurrency === 'Unknown currency') return;
 
@@ -138,14 +138,39 @@ function getCurrencySymbol(countryCode) {
 }
 
 function extractNumber(str) {
-    // Extract digits, dots, and commas
-    let cleanedString = str.match(/[0-9., ]+/g);
+    // Extract the part of the string with digits, commas, dots, apostrophes, and spaces
+    let cleanedString = str.match(/(\d+[.,\d' \s]*)(?=\D|$)/);
 
     if (!cleanedString) return null;
 
-    // Join the matched parts, replace commas with dots only if followed by three or more digits, 
-    // or if followed by two digits and the end of the string, then remove spaces
-    cleanedString = cleanedString.join('').replace(/,(?=\d{3}([^0-9]|$))/g, '').replace(/,(?=\d{2}$)/, '.').replace(/ /g, '');
+    cleanedString = cleanedString[0];
+
+    // Remove spaces and apostrophes (they're thousands separators)
+    cleanedString = cleanedString.replace(/[ \']/g, '');
+
+    // Determine format based on the presence of both ',' and '.'
+    if (cleanedString.includes('.') && cleanedString.includes(',')) {
+        if (cleanedString.indexOf('.') < cleanedString.indexOf(',')) {
+            // European-style format: dot as thousands, comma as decimal
+            cleanedString = cleanedString.replace(/\./g, '').replace(',', '.');
+        } else {
+            // US-style format: comma as thousands, dot as decimal
+            cleanedString = cleanedString.replace(/,/g, '');
+        }
+    } else if (cleanedString.includes(',')) {
+        // If only a comma is present, determine if it's decimal or thousands separator
+        if (cleanedString.match(/,\d{2}$/)) {
+            cleanedString = cleanedString.replace(',', '.');
+        } else {
+            cleanedString = cleanedString.replace(/,/g, '');
+        }
+    } else if (cleanedString.includes('.')) {
+        // If only a dot is present, determine if it's decimal or thousands separator
+        if (cleanedString.match(/\.\d{3}$/)) {
+            // Dot as thousands separator
+            cleanedString = cleanedString.replace(/\./g, '');
+        }
+    }
 
     let result = parseFloat(cleanedString);
 
@@ -162,6 +187,16 @@ function formatCurrency(amount, currencyCode, userLocale = navigator.language) {
     const currencySymbol = getCurrencySymbol(currencyCode);
 
     return `${formattedAmount} ${currencySymbol}`;
+}
+
+function extractCurrencySymbol(str) {
+    // Remove numbers, whitespace, commas, periods
+    const cleanedStr = str.replace(/[0-9\s,.']+/g, '');
+
+    // Match everything up to the first parenthesis (if present)
+    const result = cleanedStr.match(/^[^\(\)]+/);
+
+    return result ? result[0] : '';
 }
 
 function detectCurrency(currencySymbol) {
@@ -227,7 +262,6 @@ async function getCurrencyRate(from, to) {
 
     try {
         let response = await fetch(url);
-        console.log(response);
 
         if (!response.ok) {
             response = await fetch(fallbackUrl);

@@ -302,9 +302,23 @@ function testExtractNumber() {
 
     // Test case 5:
     assertEqual(
-        extractNumber('The price is $1.23'),
-        1.23,
+        extractNumber('The price is ₹1,23,456.78'),
+        123456.78,
         'Test case 5: Test if extractNumber function returns correct number from text'
+    );
+
+    // Test case 6:
+    assertEqual(
+        extractNumber('The price is ₣1\'234.56'),
+        1234.56,
+        'Test case 6: Test if extractNumber function returns correct number from text'
+    );
+
+    // Test case 7:
+    assertEqual(
+        extractNumber('The price is €1.234,56'),
+        1234.56,
+        'Test case 7: Test if extractNumber function returns correct number from text'
     );
 }
 
@@ -387,14 +401,6 @@ async function observeCurrencyRateDiv(resolve, reject) {
     // Start observing the body for changes
     observer.observe(document.body, { childList: true, subtree: true });
 
-    // await new Promise((resolve) => {
-        // setTimeout(() => {
-        //     if (!isResolved) {
-        //     observer.disconnect();
-        //     reject('Currency rate div not found within the timeout');
-        //     }
-        // }, 1000);
-    // });
     await new Promise((timeoutResolve, timeoutReject) => {
         setTimeout(() => {
           if (!isResolved) {
