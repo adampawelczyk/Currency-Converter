@@ -91,7 +91,7 @@ async function drawCurrencyRateDiv() {
             currencyRateDiv.style.backgroundColor = '#f4f4f4';
             currencyRateDiv.style.color = 'black';
         }
-        currencyRateDiv.style.zIndex = '99999'; // this is to ensure that the div is visible and not covered by any other element
+        currencyRateDiv.style.zIndex = 'calc(infinity)'; // this is to ensure that the div is visible and not covered by any other element
 
         currencyRateDiv.style.boxShadow = '3px 3px 10px -4px rgba(0, 0, 0, 1)';
 
