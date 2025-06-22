@@ -185,7 +185,9 @@ function formatCurrency(amount, currencyCode, userLocale = navigator.language) {
         maximumFractionDigits: 2
     }).format(amount);
 
-    const currencySymbol = getCurrencySymbol(currencyCode);
+    let currencySymbol = getCurrencySymbol(currencyCode);
+
+    if (Array.isArray(currencySymbol)) currencySymbol = currencySymbol[0];
 
     return `${formattedAmount} ${currencySymbol}`;
 }
